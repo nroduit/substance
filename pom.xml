@@ -58,6 +58,28 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>test/**</exclude>
+						<exclude>tools/**</exclude>
+						<exclude>**/ant/*.java</exclude>
+						<exclude>org/pushingpixels/substance/internal/ui/SubstanceColorChooserUI*</exclude>
+						<exclude>org/pushingpixels/substance/internal/contrib/randelshofer/**</exclude>
+						<exclude>org/pushingpixels/substance/internal/contrib/xoetrope/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
